@@ -1,0 +1,54 @@
+xmelab(64): 17.04-s014: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	xmelab(64)	17.04-s014: Started on Dec 06, 2020 at 14:58:08 PST
+ncelab
+    -ACCESS +rwc
+    -NCFATAL
+    INVSUP
+    -NCFATAL
+    CUNOTB
+    -ERRORMAX 5
+    -UPDATE
+    -MESSAGES
+    -TIMESCALE 1ns/10ps
+    -LIBVERBOSE
+    work.cpu_tb
+
+xmelab: *W,OPDEPRREN: Command Line Option (NCFATAL) is deprecated. Use (XMFATAL) instead.
+xmelab: *W,OPDEPRREN: Command Line Option (NCFATAL) is deprecated. Use (XMFATAL) instead.
+xmelab: *W,NCEXDEP: Executable (ncelab) is deprecated. Use (xmelab) instead.
+	Elaborating the design hierarchy:
+Resolving design unit 'imem' at 'cpu_tb.IM'.
+		Caching library 'work' ....... Done
+	library: 'work' views: 'module' -> found
+Resolved design unit 'imem' at 'cpu_tb.IM' to 'work.imem:module'.
+Resolving design unit 'dmem' at 'cpu_tb.DM'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'dmem' at 'cpu_tb.DM' to 'work.dmem:module'.
+Resolving design unit 'cpu' at 'cpu_tb.cpu'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'cpu' at 'cpu_tb.cpu' to 'work.cpu:module'.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		work.cpu:module <0x399e47ba>
+			streams:  65, words: 62097
+		work.cpu_tb:module <0x52eea294>
+			streams:  10, words:  6290
+		work.imem:module <0x6d28025b>
+			streams:   1, words:   191
+		work.dmem:module <0x04e155ab>
+			streams:   4, words:  1833
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  4       4
+		Registers:               62      62
+		Scalar wires:            31       -
+		Vectored wires:          16       -
+		Always blocks:           10      10
+		Initial blocks:           1       1
+		Cont. assignments:       13      42
+		Pseudo assignments:       4       4
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: work.cpu_tb:module
+TOOL:	xmelab(64)	17.04-s014: Exiting on Dec 06, 2020 at 14:58:08 PST  (total: 00:00:00)
