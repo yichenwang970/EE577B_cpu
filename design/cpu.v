@@ -1,4 +1,4 @@
-module cpu(
+module cardinal_processor(
 		input clk          ,             // System Clock
 		input reset        ,           // System Reset
 		input [0:31]instruction  ,     // Instruction from Instruction Memory
@@ -13,6 +13,8 @@ module cpu(
 	// memEn and memWrEn is 1,0 : read mode    (dataIn,  memAddr)
 	
 	reg [0:63] REG_FILE [0:31];
+	wire clk_n;
+	assign clk_n = ~clk;
 	
 	//IF stage signal
 	reg [0:31] pc_count;
@@ -635,7 +637,7 @@ module cpu(
 	assign WB_final_data[0:63] = WB_lw ? dataIn[0:63] : WB_data[0:63];
 	
 	integer i;
-	always @(negedge clk or posedge reset)
+	always @(posedge clk_n or posedge reset)
 	begin
 		if (reset)
 		begin
